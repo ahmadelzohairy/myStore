@@ -1,0 +1,21 @@
+<div class="detail-container">
+  <img [src]="product.url" alt="product image" class="img" />
+
+  <div class="detail-item">
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.price | currency }}</p>
+    <p>{{ product.description }}</p>
+
+    <form (ngSubmit)="submit()">
+      <input
+        class="select-input"
+        type="number"
+        [(ngModel)]="amount"
+        name="amount"
+      />
+      <br />
+      <button class="btn btn-primary select-input">Add to Cart</button>
+    </form>
+    <a routerLink="/">back to product list</a>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container" *ngIf="!isSuccess">
+  <div class="row">
+    <div class="cart-container col">
+      <app-product-item
+        [isCart]="isCart"
+        *ngFor="let item of cartItems"
+        [product]="item.product"
+      ></app-product-item>
+      <h3 style="margin-left: 20px">Total: {{ total | currency }}</h3>
+    </div>
+    <div class="form-container col">
+      <app-cart-form (isSuccess)="success($event)"></app-cart-form>
+    </div>
+  </div>
+
+</div>
+<div class="container" *ngIf="isSuccess">
+  <app-confirmation [fullname]="fullname" [total]="total"></app-confirmation>
+</div>

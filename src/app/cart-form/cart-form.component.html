@@ -1,0 +1,45 @@
+<form #form="ngForm" (ngSubmit)="submit()">
+  <div class="mb-3">
+    <label class="form-label" for="fullname">full name:</label>
+    <input
+      class="form-control"
+      type="text"
+      id="fullname"
+      placeholder="full name 12 character minimum"
+      name="fullname"
+      [(ngModel)]="fullname"
+      required
+      minlength="12"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="address">address:</label>
+    <input
+      class="form-control"
+      type="text"
+      placeholder="address 12 character minimum"
+      name="address"
+      [(ngModel)]="address"
+      required
+      minlength="12"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="creditcard">creditcard:</label>
+    <input
+      class="form-control"
+      type="text"
+      placeholder="creditcard 16 character"
+      name="creditcard"
+      [(ngModel)]="creditcard"
+      required
+      minlength="16"
+    />
+  </div>
+  <input
+    class="btn btn-primary"
+    type="submit"
+    value="Submit"
+    [disabled]="form.invalid"
+  />
+</form>
