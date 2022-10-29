@@ -25,3 +25,28 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Components hierarchy
+  app
+    cart  
+      cart-form
+      confirmation
+    product-list
+      product-item
+      product-item-detail
+    nav-bar
+
+## models
+  Product
+    id: number
+    name: string
+    price: number
+    url: string
+    description: string
+
+  ICartItems
+    product: Product;
+    amount: number;
+## services
+  ProductService: manage products
+  CartServices: share cart data across the application

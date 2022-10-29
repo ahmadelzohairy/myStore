@@ -10,6 +10,7 @@ export class CartService {
   cartItems: ICartItems[] = [];
   addToCart(product: Product, amount: number): void {
     const newItem = this.cartItems.filter((c) => c.product.id === product.id);
+
     if (newItem.length == 0) {
       const item: ICartItems = { product: product, amount: amount };
       this.cartItems.push(item);
@@ -18,6 +19,7 @@ export class CartService {
         c.product.id === product.id ? { ...c, amount: (c.amount += amount) } : c
       );
     }
+    console.log(`cart ${JSON.stringify(this.cartItems)}`);
   }
   getCartItems(): ICartItems[] {
     console.log(`cart:${this.cartItems}`);

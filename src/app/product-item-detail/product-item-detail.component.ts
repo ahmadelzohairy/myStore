@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Route } from '@angular/router';
 import { Product } from '../models/Product';
 import { CartService } from '../services/cart.service';
@@ -21,10 +21,6 @@ export class ProductItemDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.amount = this.cart.cartItems.find(
-      (c) => c.product.id === this.product.id
-    )?.amount as number;
-
     this.id = this.route.snapshot.params['id'];
 
     this.productService.getProducts().subscribe((res) => {
@@ -33,5 +29,8 @@ export class ProductItemDetailComponent implements OnInit {
   }
   submit(): void {
     this.cart.addToCart(this.product, this.amount);
+    this.amount = this.cart.cartItems.find((c) => c.product.id === this.id)
+      ?.amount as number;
+    alert('added to cart');
   }
 }
