@@ -1,4 +1,4 @@
-import { Component, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Route } from '@angular/router';
 import { Product } from '../models/Product';
 import { CartService } from '../services/cart.service';
@@ -33,4 +33,15 @@ export class ProductItemDetailComponent implements OnInit {
       ?.amount as number;
     alert('added to cart');
   }
+  // removeItem() {
+  //   const item = this.cart.getOneCartItem(this.product.id);
+  //   if (item) {
+  //     const index = this.cart.cartItems.indexOf(item);
+  //     this.cart.cartItems.splice(index, 1);
+  //     alert('removed from cart');
+  //     return;
+  //   }
+
+  //   alert('there is no irems to be removed from cart');
+  // }
 }

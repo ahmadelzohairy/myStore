@@ -2,6 +2,8 @@
   <div class="row">
     <div class="cart-container col">
       <app-product-item
+        [total]="total"
+        (newTotal)="changeTotal($event)"
         [isCart]="isCart"
         *ngFor="let item of cartItems"
         [product]="item.product"
@@ -12,7 +14,6 @@
       <app-cart-form (isSuccess)="success($event)"></app-cart-form>
     </div>
   </div>
-
 </div>
 <div class="container" *ngIf="isSuccess">
   <app-confirmation [fullname]="fullname" [total]="total"></app-confirmation>

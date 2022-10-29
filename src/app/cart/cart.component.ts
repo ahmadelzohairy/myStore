@@ -27,4 +27,7 @@ export class CartComponent implements OnInit {
     this.isSuccess = data.flag;
     this.fullname = data.fullname;
   }
+  changeTotal(newTotal: number){
+    this.total = newTotal
+  }
 }

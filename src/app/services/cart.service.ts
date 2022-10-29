@@ -19,10 +19,12 @@ export class CartService {
         c.product.id === product.id ? { ...c, amount: (c.amount += amount) } : c
       );
     }
-    console.log(`cart ${JSON.stringify(this.cartItems)}`);
   }
   getCartItems(): ICartItems[] {
     console.log(`cart:${this.cartItems}`);
     return this.cartItems;
+  }
+  getOneCartItem(id: number) {
+    return this.cartItems.find((c) => c.product.id === id);
   }
 }

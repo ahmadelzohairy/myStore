@@ -2,6 +2,7 @@
   <div class="mb-3">
     <label class="form-label" for="fullname">full name:</label>
     <input
+      (ngModelChange)="loggingSomeInfo()"
       class="form-control"
       type="text"
       id="fullname"
@@ -15,6 +16,7 @@
   <div class="mb-3">
     <label for="address">address:</label>
     <input
+      (ngModelChange)="loggingSomeInfo()"
       class="form-control"
       type="text"
       placeholder="address 12 character minimum"
@@ -27,6 +29,7 @@
   <div class="mb-3">
     <label for="creditcard">creditcard:</label>
     <input
+      (ngModelChange)="loggingSomeInfo()"
       class="form-control"
       type="text"
       placeholder="creditcard 16 character"
@@ -42,4 +45,9 @@
     value="Submit"
     [disabled]="form.invalid"
   />
+  <div *ngIf="form.invalid && form.dirty" style="color: red">
+    <p>fullname 12 character minimum</p>
+    <p>address 12 character minimum</p>
+    <p>creditcard 16 character minimum</p>
+  </div>
 </form>

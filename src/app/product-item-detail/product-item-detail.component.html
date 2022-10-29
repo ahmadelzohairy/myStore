@@ -1,4 +1,4 @@
-<div class="detail-container">
+<div class="detail-container" *ngIf="product">
   <img [src]="product.url" alt="product image" class="img" />
 
   <div class="detail-item">
@@ -16,6 +16,11 @@
       <br />
       <button class="btn btn-primary select-input">Add to Cart</button>
     </form>
+    <!-- <div>
+      <button class="select-input btn btn-primary" (click)="removeItem()">
+        Remove from cart
+      </button>
+    </div> -->
     <a routerLink="/">back to product list</a>
   </div>
 </div>

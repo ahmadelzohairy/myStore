@@ -18,6 +18,9 @@ export class CartFormComponent implements OnInit {
     console.log(`fullname: ${this.fullname}
     address:${this.address}
     creditcard: ${this.creditcard}`);
-    this.isSuccess.emit({flag:true, fullname:this.fullname});
+    this.isSuccess.emit({ flag: true, fullname: this.fullname });
+  }
+  loggingSomeInfo() {
+    console.log('some logging info');
   }
 }
